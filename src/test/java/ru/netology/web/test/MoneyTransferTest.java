@@ -15,8 +15,7 @@ public class MoneyTransferTest {
 
     @Test
     void shouldValidTransfer() {
-        open("http://localhost:9999", LoginPage.class);
-        var loginPage = new LoginPage();
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCode();
@@ -38,8 +37,7 @@ public class MoneyTransferTest {
 
     @Test
     void shouldNotTransfer() {
-        open("http://localhost:9999", LoginPage.class);
-        var loginPage = new LoginPage();
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCode();
